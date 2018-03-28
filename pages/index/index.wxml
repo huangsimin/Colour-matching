@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="item" wx:for="{{ template }}" 
+    style="background: {{ item.color }};">
+    <view class="item-text">{{ item.color }}</view>
+  </view>
+  <scroll-view scroll-x class="bottom-scroll">
+    <view class="{{ currentTemplate == index ? 'scroll-item active-item' : 'scroll-item' }}" 
+      wx:for="{{ colorList }}" 
+      data-index="{{ index }}"
+      bindtap="selectColor">
+      <view class=""
+        wx:for="{{ item }}" 
+        style="background: {{ item.color }}; height: 25%;">
+      </view>
+    </view>
+  </scroll-view>
+</view>
